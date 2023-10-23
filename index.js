@@ -93,7 +93,11 @@ books.sort((a, b) => a.publishDate - b.publishDate)
 books.forEach((book) => {
   console.log(book.name);
 })
-
+//recent to oldest
+books.sort((a, b) => b.publishDate - a.publishDate)
+books.forEach((book) => {
+  console.log(book.name);
+})
 //sort books alphabetically
 titles.sort();
 console.log(titles);
