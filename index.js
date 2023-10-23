@@ -103,10 +103,11 @@ titles.sort();
 console.log(titles);
 
 //Find who wrote War and Peace
-function warPeace(book) {
-  return book.name === "War and Peace";
-}
-console.log(books.find(warPeace));
+books
+  .filter((book) => book.name == "War and Peace")
+  .forEach((book) => {
+    console.log(book.authorFirst, book.authorLast);
+  })
 
 //how many books were written before 1900? (names)
 const result = books.filter((books) => books.publishDate < 1900);
@@ -136,7 +137,8 @@ if (books.every((book) => new Date().getFullYear() - book.publishDate <= 100)) {
 }
 
 //print a list of books that "includes" the genre historical
-books.filter((book) => book.genre.includes("historical"))
-books.forEach((book) => {
+books
+  .filter((book) => book.genre.includes("historical"))
+  .forEach((book) => {
   console.log(book.name);
-})
+});
