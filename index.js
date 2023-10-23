@@ -88,8 +88,10 @@ const titles = [
 //"--- wrote --- in ---"
 books.forEach((book) => console.log(book.authorFirst + " " + book.authorLast + " " + "wrote" + " " + book.name + " " + "in" + " " + book.publishDate))
 //Sort books from oldest to most recent
-books.pulishDate.sort(books);
-console.log(books);
+books.sort((a, b) => a.publishDate - b.publishDate)
+books.forEach((book) => {
+  console.log(book.name);
+})
 //sort books alphabetically
 titles.sort();
 console.log(titles);
@@ -108,5 +110,7 @@ console.log(books.some(date));
 const publish = (value) => value.publishDate > 1923
 console.log(books.every(publish));
 //print a list of books that "includes" the genre historical
-const genre = books.filter((book) => book.genre = "historical");
-console.log(genre);
+books.filter((book) => book.genre.includes("historical"))
+books.forEach((book) => {
+  console.log(book.name);
+})
