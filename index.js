@@ -104,7 +104,7 @@ function warPeace(book) {
 }
 console.log(books.find(warPeace));
 
-//how many books were written before 1900?
+//how many books were written before 1900? (names)
 const result = books.filter((books) => books.publishDate < 1900);
 console.log(result);
 
